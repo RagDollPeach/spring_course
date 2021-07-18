@@ -1,3 +1,8 @@
 D:\Spring\SimpleMVC\src\main\java\org\example\app\services\LoginService.java
 D:\Spring\SimpleMVC\src\main\java\org\example\web\dto\LoginForm.java
+D:\Spring\SimpleMVC\src\main\java\org\example\web\controllers\BookShelfController.java
 D:\Spring\SimpleMVC\src\main\java\org\example\web\controllers\LoginController.java
+D:\Spring\SimpleMVC\src\main\java\org\example\web\dto\Book.java
+D:\Spring\SimpleMVC\src\main\java\org\example\app\services\BookRepository.java
+D:\Spring\SimpleMVC\src\main\java\org\example\app\services\BookService.java
+D:\Spring\SimpleMVC\src\main\java\org\example\app\services\ProjectRepository.java
