@@ -44,7 +44,7 @@ public class BookShelfController {
     }
 
     @PostMapping("/remove")
-    public String removeBook(@RequestParam(value = "bookIdToRemove") Integer bookIdToRemove) {
+    public String removeBook(@RequestParam(value = "bookIdToRemove")@NonNull Integer bookIdToRemove) {
         if (bookService.removeBookById(bookIdToRemove)) {
             logger.info("Book removed " + bookIdToRemove);
         } else {
