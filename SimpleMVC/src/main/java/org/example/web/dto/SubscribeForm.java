@@ -1,16 +1,25 @@
 package org.example.web.dto;
 
 public class SubscribeForm {
-
+    private Integer id;
     private String userName;
     private String password;
 
-    public SubscribeForm(String userName, String password) {
+    public SubscribeForm(Integer id, String userName, String password) {
+        this.id = id;
         this.userName = userName;
         this.password = password;
     }
 
     public SubscribeForm() {
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getUserName() {
@@ -32,7 +41,8 @@ public class SubscribeForm {
     @Override
     public String toString() {
         return "SubscribeForm{" +
-                "userName='" + userName + '\'' +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
                 ", password='" + password + '\'' +
                 '}';
     }

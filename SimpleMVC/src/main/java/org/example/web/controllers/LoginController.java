@@ -1,6 +1,7 @@
 package org.example.web.controllers;
 
 import org.example.app.services.LoginService;
+import org.example.app.services.SubscribeService;
 import org.example.web.dto.LoginForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,10 +18,12 @@ public class LoginController {
 
     private final Logger logger = Logger.getLogger(LoginController.class);
     private final LoginService loginService;
+    private final SubscribeService subscribeService;
 
     @Autowired
-    public LoginController(LoginService loginService) {
+    public LoginController(LoginService loginService, SubscribeService subscribeService) {
         this.loginService = loginService;
+        this.subscribeService = subscribeService;
     }
 
     @GetMapping
