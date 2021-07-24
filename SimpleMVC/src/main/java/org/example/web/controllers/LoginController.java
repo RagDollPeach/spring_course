@@ -1,7 +1,6 @@
 package org.example.web.controllers;
 
 import org.example.app.services.LoginService;
-import org.example.app.services.SubscribeService;
 import org.example.web.dto.LoginForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,12 +17,11 @@ public class LoginController {
 
     private final Logger logger = Logger.getLogger(LoginController.class);
     private final LoginService loginService;
-    private final SubscribeService subscribeService;
+
 
     @Autowired
-    public LoginController(LoginService loginService, SubscribeService subscribeService) {
+    public LoginController(LoginService loginService) {
         this.loginService = loginService;
-        this.subscribeService = subscribeService;
     }
 
     @GetMapping
@@ -35,7 +33,7 @@ public class LoginController {
 
     @PostMapping("/auth")
     public String authenticate(LoginForm loginFrom) {
-        if (loginService.authenticate(loginFrom)) {
+        if (loginService.authenticate(loginFrom.getUserName(),loginFrom.getPassword())) {
             logger.info("login OK redirect to book shelf");
             return "redirect:/books/shelf";
         } else {
