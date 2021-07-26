@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class UserRepository implements ProjectRepository<LoginForm>{
+public class UserRepository implements UserRepositoryImpl {
 
     private final Logger logger = Logger.getLogger(UserRepository.class);
     private List<LoginForm> subscribers = new ArrayList<>();
@@ -22,10 +22,5 @@ public class UserRepository implements ProjectRepository<LoginForm>{
     public void store(LoginForm userForm) {
         logger.info("Store new subscriber " + userForm);
         subscribers.add(userForm);
-    }
-
-    @Override
-    public boolean removeItemById(Integer bookIdToRemove) {
-        return false;
     }
 }

@@ -36,4 +36,37 @@ public class BookRepository implements ProjectRepository<Book> {
         }
         return false;
     }
+
+    @Override
+    public boolean removeAllByAuthor(String author) {
+        for (Book book : retreiveAll()) {
+            if (book.getAuthor().equals(author)) {
+                logger.info("remove books completed: " + book);
+                repo.remove(book);
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public boolean removeAllByTitle(String title) {
+        for (Book book : retreiveAll()) {
+            if (book.getTitle().equals(title)) {
+                logger.info("remove books completed: " + book);
+                repo.remove(book);
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public boolean removeAllBySize(Integer size) {
+        for (Book book : retreiveAll()) {
+            if (book.getSize().equals(size)) {
+                logger.info("remove books completed: " + book);
+                repo.remove(book);
+            }
+        }
+        return false;
+    }
 }

@@ -52,4 +52,26 @@ public class BookShelfController {
         }
         return "redirect:/books/shelf";
     }
+
+    @PostMapping("/remove_all")
+    public String removeAllBooksByAuthor(@NonNull String author) {
+        for (Book book : bookService.getAllBooks()) {
+            if (author.equals(book.getAuthor())) {
+                if (bookService.removeAllBooksByAuthor(author)) {
+                    logger.info("Book removed " + author);
+                }
+            } else if (author.equals(book.getTitle())) {
+                if (bookService.removeAllByTitle(author)) {
+                    logger.info("Book removed " + author);
+                }
+            } else if (author.equals(book.getSize().toString())) {
+                if (bookService.removeAllBySize(Integer.parseInt(author))) {
+                    logger.info("Book removed " + author);
+                }
+            } else {
+                logger.info("Wrong id " + author);
+            }
+        }
+        return "redirect:/books/shelf";
+    }
 }

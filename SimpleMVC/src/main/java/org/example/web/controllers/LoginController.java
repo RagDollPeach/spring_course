@@ -3,6 +3,7 @@ package org.example.web.controllers;
 import org.example.app.services.LoginService;
 import org.example.web.dto.LoginForm;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +18,6 @@ public class LoginController {
 
     private final Logger logger = Logger.getLogger(LoginController.class);
     private final LoginService loginService;
-
 
     @Autowired
     public LoginController(LoginService loginService) {
@@ -40,5 +40,12 @@ public class LoginController {
             logger.info("login FAIL redirect back to login");
             return "redirect:/login";
         }
+    }
+
+    @PostMapping("/save_user")
+    public String saveUser(@NonNull LoginForm loginForm) {
+        loginService.store(loginForm);
+        logger.info("User saved " + loginForm.getUserName());
+        return "redirect:/login";
     }
 }

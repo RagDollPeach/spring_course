@@ -62,7 +62,18 @@
             </tr>
         </table>
     </form>
-
+    <form method="post" th:action="@{/books/remove_all}">
+        <table>
+            <tr>
+                <td>
+                    <input type="text" placeholder="author, title, size" th:name="author">
+                </td>
+                <td>
+                    <input type="submit" value="removeAll">
+                </td>
+            </tr>
+        </table>
+    </form>
 
     <table id="books">
         <tr>
