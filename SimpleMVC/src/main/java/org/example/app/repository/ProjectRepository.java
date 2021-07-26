@@ -1,4 +1,6 @@
-package org.example.app.services;
+package org.example.app.repository;
+
+import org.example.web.dto.Book;
 
 import java.util.List;
 
@@ -14,4 +16,6 @@ public interface ProjectRepository<T> {
     boolean removeAllByTitle(String title);
 
     boolean removeAllBySize(Integer size);
+
+    List<Book> findBooksByAuthor(String author);
 }

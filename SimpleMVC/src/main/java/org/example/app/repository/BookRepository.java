@@ -1,8 +1,7 @@
-package org.example.app.services;
+package org.example.app.repository;
 
 import org.apache.log4j.Logger;
 import org.example.web.dto.Book;
-import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -68,5 +67,16 @@ public class BookRepository implements ProjectRepository<Book> {
             }
         }
         return false;
+    }
+
+    @Override
+    public List<Book> findBooksByAuthor(String author) {
+        List<Book> bookList = new ArrayList<>();
+        for (Book book : retreiveAll()) {
+            if (author.equals(book.getAuthor())) {
+                bookList.add(book);
+            }
+        }
+        return bookList;
     }
 }

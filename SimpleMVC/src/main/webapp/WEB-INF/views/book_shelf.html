@@ -62,14 +62,53 @@
             </tr>
         </table>
     </form>
-    <form method="post" th:action="@{/books/remove_all}">
+    <form method="post" th:action="@{/books/remove_all_by_author}">
         <table>
             <tr>
                 <td>
-                    <input type="text" placeholder="author, title, size" th:name="author">
+                    <input type="text" placeholder="author" th:name="author">
                 </td>
                 <td>
                     <input type="submit" value="removeAll">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <form method="post" th:action="@{/books/remove_all_by_title}">
+        <table>
+            <tr>
+                <td>
+                    <input type="text" placeholder="title" th:name="title">
+                </td>
+                <td>
+                    <input type="submit" value="removeAll">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <form method="post" th:action="@{/books/remove_all_by_size}">
+        <table>
+            <tr>
+                <td>
+                    <input type="text" placeholder="pages" th:name="pages">
+                </td>
+                <td>
+                    <input type="submit" value="removeAll">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <form method="get" th:action="@{/books/bokk_list}">
+        <table>
+            <tr>
+                <td>
+                    <input type="text" placeholder="author" th:name="author">
+                </td>
+                <td>
+                    <input type="submit" value="get all books">
+                </td>
+                <td>
+                    <textarea name="book_list"  ></textarea>
                 </td>
             </tr>
         </table>
