@@ -59,7 +59,7 @@ public class BookRepository implements ProjectRepository<Book> {
     }
 
     @Override
-    public boolean removeAllBySize(Integer size) {
+    public boolean removeAllBySize(String size) {
         for (Book book : retreiveAll()) {
             if (book.getSize().equals(size)) {
                 logger.info("remove books completed: " + book);

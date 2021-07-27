@@ -4,7 +4,7 @@ public class Book {
     private Integer id;
     private String author;
     private String title;
-    private Integer size;
+    private String size;
 
     public Integer getId() {
         return id;
@@ -30,11 +30,11 @@ public class Book {
         this.title = title;
     }
 
-    public Integer getSize() {
+    public String getSize() {
         return size;
     }
 
-    public void setSize(Integer size) {
+    public void setSize(String size) {
         this.size = size;
     }
 

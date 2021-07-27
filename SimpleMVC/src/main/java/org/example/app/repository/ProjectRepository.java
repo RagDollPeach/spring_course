@@ -15,7 +15,7 @@ public interface ProjectRepository<T> {
 
     boolean removeAllByTitle(String title);
 
-    boolean removeAllBySize(Integer size);
+    boolean removeAllBySize(String size);
 
     List<Book> findBooksByAuthor(String author);
 }

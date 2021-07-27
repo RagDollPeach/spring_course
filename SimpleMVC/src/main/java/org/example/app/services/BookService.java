@@ -37,7 +37,7 @@ public class BookService {
         return bookRepo.removeAllByTitle(title);
     }
 
-    public boolean removeAllBySize(Integer size) {
+    public boolean removeAllBySize(String size) {
         return bookRepo.removeAllBySize(size);
     }
 

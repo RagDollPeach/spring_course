@@ -1,7 +1,6 @@
 package org.example.web.controllers;
 
 import org.apache.log4j.Logger;
-import org.example.app.repository.BookRepository;
 import org.example.app.services.BookService;
 import org.example.web.dto.Book;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +17,6 @@ public class BookShelfController {
 
     private Logger logger = Logger.getLogger(BookShelfController.class);
     private BookService bookService;
-    private BookRepository repository;
 
     @Autowired
     public BookShelfController(BookService bookService) {
@@ -35,7 +33,7 @@ public class BookShelfController {
 
     @PostMapping("/save")
     public String saveBook(Book book) {
-        if (!book.getAuthor().isEmpty() || !book.getTitle().isEmpty() || book.getSize() != null) {
+        if (!book.getAuthor().isEmpty() || !book.getTitle().isEmpty() || !book.getSize().isEmpty()) {
             bookService.saveBook(book);
             logger.info("current repository size: " + bookService.getAllBooks().size());
         } else {
@@ -84,7 +82,7 @@ public class BookShelfController {
     }
 
     @PostMapping("/remove_all_by_size")
-    public String removeAllBySize(@NonNull Integer pages) {
+    public String removeAllBySize(@NonNull String pages) {
         for (Book book : bookService.getAllBooks()) {
             if (pages.equals(book.getSize())) {
                 if (bookService.removeAllBySize(pages)) {
@@ -98,8 +96,9 @@ public class BookShelfController {
     }
 
     @GetMapping("/book_list")
-    public String findBooksByAuthor(String author) {
-        bookService.findBooksByAuthor(author);
-        return "book_shelf";
+    public String findBooksByAuthor(Model model, String author) {
+        model.addAttribute("books", new Book());
+        model.addAttribute("author", bookService.findBooksByAuthor(author));
+        return "redirect:/books/shelf";
     }
 }

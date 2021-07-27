@@ -16,6 +16,11 @@
             border-collapse: collapse;
         }
 
+        #books_list {
+            width: 50%;
+            border-collapse: collapse;
+        }
+
         table {
             margin: 25px;
         }
@@ -107,9 +112,20 @@
                 <td>
                     <input type="submit" value="get all books">
                 </td>
-                <td>
-                    <textarea name="book_list"  ></textarea>
-                </td>
+            </tr>
+        </table>
+        <table id="books_list">
+            <tr>
+                <th>id</th>
+                <th>author</th>
+                <th>title</th>
+                <th>size</th>
+            </tr>
+            <tr th:each="book : ${author}">
+                <td th:text="${book.id}"></td>
+                <td th:text="${book.author}"></td>
+                <td th:text="${book.title}"></td>
+                <td th:text="${book.size}"></td>
             </tr>
         </table>
     </form>
