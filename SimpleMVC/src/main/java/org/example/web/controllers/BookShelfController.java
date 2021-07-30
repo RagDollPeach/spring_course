@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 @RequestMapping(value = "/books")
 public class BookShelfController {
@@ -66,7 +68,6 @@ public class BookShelfController {
         return "redirect:/books/shelf";
     }
 
-
     @PostMapping("/remove_all_by_title")
     public String removeAllByTitle(@NonNull String title) {
         for (Book book : bookService.getAllBooks()) {
@@ -95,10 +96,12 @@ public class BookShelfController {
         return "redirect:/books/shelf";
     }
 
-    @GetMapping("/book_list")
-    public String findBooksByAuthor(Model model, String author) {
-        model.addAttribute("books", new Book());
-        model.addAttribute("author", bookService.findBooksByAuthor(author));
+    @PostMapping("/book_list")
+    public String findBooksByAuthor(Model model, @NonNull String author) {
+        List<Book> list = bookService.findBooksByAuthor(author);
+        model.addAttribute("book", new Book());
+        model.addAttribute("authors", list);
+        logger.info("find books " + list);
         return "redirect:/books/shelf";
     }
 }

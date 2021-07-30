@@ -103,14 +103,14 @@
             </tr>
         </table>
     </form>
-    <form method="get" th:action="@{/books/bokk_list}">
+    <form method="post" th:action="@{/books/book_list}" th:object="${book}">
         <table>
             <tr>
                 <td>
-                    <input type="text" placeholder="author" th:name="author">
+                    <input type="text" placeholder="author" th:field="*{author}">
                 </td>
                 <td>
-                    <input type="submit" value="get all books">
+                    <input type="submit" value="find all by author">
                 </td>
             </tr>
         </table>
@@ -121,7 +121,7 @@
                 <th>title</th>
                 <th>size</th>
             </tr>
-            <tr th:each="book : ${author}">
+            <tr th:each="book : ${authors}">
                 <td th:text="${book.id}"></td>
                 <td th:text="${book.author}"></td>
                 <td th:text="${book.title}"></td>
@@ -129,7 +129,6 @@
             </tr>
         </table>
     </form>
-
     <table id="books">
         <tr>
             <th>id</th>
