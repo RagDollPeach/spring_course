@@ -12,12 +12,12 @@
         }
 
         #books {
-            width: 50%;
+            width: 60%;
             border-collapse: collapse;
         }
 
-        #books_list {
-            width: 50%;
+        #aut {
+            width: 60%;
             border-collapse: collapse;
         }
 
@@ -40,13 +40,20 @@
         <table>
             <tr>
                 <td>
-                    <input type="text" placeholder="author" th:field="*{author}">
+                    <label>
+                        <input type="text" placeholder="author" th:field="*{author}">
+                    </label>
                 </td>
                 <td>
-                    <input type="text" placeholder="book_title" th:field="*{title}">
+                    <label>
+                        <input type="text" placeholder="book_title" th:field="*{title}">
+                    </label>
                 </td>
                 <td>
-                    <input type="text" placeholder="size (pages)" th:field="*{size}">
+                    <label>
+                        <input type="text" placeholder="size (pages)" th:field="*{size}">
+                    </label>
+                    <p th:if="${#fields.hasErrors()}">field value must be digit and less than 4 signs</p>
                 </td>
                 <td>
                     <input type="submit" value="save">
@@ -55,14 +62,17 @@
         </table>
     </form>
 
-    <form method="post" th:action="@{/books/remove}">
+    <form method="post" th:action="@{/books/remove}" th:object="${bookIdToRemove}">
         <table>
             <tr>
                 <td>
-                    <input type="text" placeholder="id number" th:name="bookIdToRemove">
+                    <input type="text" placeholder="id number" th:field="*{id}">
                 </td>
                 <td>
                     <input type="submit" value="remove">
+                </td>
+                <td th:if="${#fields.hasErrors()}">
+                    <p>Wrong id or not found</p>
                 </td>
             </tr>
         </table>
@@ -71,7 +81,9 @@
         <table>
             <tr>
                 <td>
-                    <input type="text" placeholder="author" th:name="author">
+                    <label>
+                        <input type="text" placeholder="author" th:name="author">
+                    </label>
                 </td>
                 <td>
                     <input type="submit" value="removeAll">
@@ -103,7 +115,7 @@
             </tr>
         </table>
     </form>
-    <form method="post" th:action="@{/books/book_list}" th:object="${book}">
+    <form method="get" th:action="@{/books/book_list}" th:object="${book}">
         <table>
             <tr>
                 <td>
@@ -114,7 +126,7 @@
                 </td>
             </tr>
         </table>
-        <table id="books_list">
+        <table id="aut">
             <tr>
                 <th>id</th>
                 <th>author</th>
