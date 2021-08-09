@@ -31,18 +31,14 @@ public class BookShelfController {
     @GetMapping("/shelf")
     public String books(Model model) {
         logger.info(this.toString());
-        model.addAttribute("book", new Book());
-        model.addAttribute("bookIdToRemove", new BookIdToRemove());
-        model.addAttribute("bookList", bookService.getAllBooks());
+        appDateView(model);
         return "book_shelf";
     }
 
     @PostMapping("/save")
     public String saveBook(@Valid Book book, BindingResult bindingResult, Model model) {
-        if (bindingResult.hasErrors()) {
-            model.addAttribute("book", new Book());
-            model.addAttribute("bookIdToRemove", new BookIdToRemove());
-            model.addAttribute("bookList", bookService.getAllBooks());
+        if (bindingResult.hasFieldErrors("size")) {
+            appDateView(model);
             return "book_shelf";
         } else {
             bookService.saveBook(book);
@@ -53,13 +49,18 @@ public class BookShelfController {
 
     @PostMapping("/remove")
     public String removeBook(@Valid BookIdToRemove bookIdToRemove, BindingResult bindingResult, Model model) {
-        if (bindingResult.hasErrors()) {
-            model.addAttribute("book", new Book());
-            model.addAttribute("bookList", bookService.getAllBooks());
+        if (bindingResult.hasFieldErrors("id")) {
+            appDateView(model);
             return "book_shelf";
         } else {
             bookService.removeBookById(bookIdToRemove.getId());
             return "redirect:/books/shelf";
         }
+    }
+
+    private void appDateView(Model model) {
+        model.addAttribute("book", new Book());
+        model.addAttribute("bookIdToRemove", new BookIdToRemove());
+        model.addAttribute("bookList", bookService.getAllBooks());
     }
 }
