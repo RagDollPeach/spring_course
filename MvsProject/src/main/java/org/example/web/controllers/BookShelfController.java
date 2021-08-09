@@ -39,7 +39,7 @@ public class BookShelfController {
 
     @PostMapping("/save")
     public String saveBook(@Valid Book book, BindingResult bindingResult, Model model) {
-        if (bindingResult.hasFieldErrors("size")) {
+        if (bindingResult.hasErrors()) {
             model.addAttribute("book", new Book());
             model.addAttribute("bookIdToRemove", new BookIdToRemove());
             model.addAttribute("bookList", bookService.getAllBooks());
@@ -53,7 +53,7 @@ public class BookShelfController {
 
     @PostMapping("/remove")
     public String removeBook(@Valid BookIdToRemove bookIdToRemove, BindingResult bindingResult, Model model) {
-        if (bindingResult.hasFieldErrors("id")) {
+        if (bindingResult.hasErrors()) {
             model.addAttribute("book", new Book());
             model.addAttribute("bookList", bookService.getAllBooks());
             return "book_shelf";
