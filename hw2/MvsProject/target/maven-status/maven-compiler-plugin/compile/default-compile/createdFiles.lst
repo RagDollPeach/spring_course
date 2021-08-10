@@ -1,0 +1,16 @@
+org\example\app\services\BookService.class
+org\example\app\services\LoginService.class
+org\example\web\controllers\BookShelfController.class
+org\example\web\dto\BookIdToRemove.class
+org\example\app\repositorys\ProjectRepository.class
+org\example\web\controllers\ErrorController.class
+org\example\WebAppInitializer.class
+org\example\app\exeptions\BookShelfLoginException.class
+org\example\app\repositorys\UserRepositoryImpl.class
+org\example\app\repositorys\BookRepository.class
+org\example\app\repositorys\UserRepository.class
+org\example\web\config\WebContextConfig.class
+org\example\web\controllers\LoginController.class
+org\example\web\dto\LoginForm.class
+org\example\app\services\IdProvider.class
+org\example\web\dto\Book.class
