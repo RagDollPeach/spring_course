@@ -28,7 +28,7 @@ public class BookService {
         bookRepo.store(book);
     }
 
-    public boolean removeBookById(String bookIdToRemove) {
+    public boolean removeBookById(Integer bookIdToRemove) {
         return bookRepo.removeItemById(bookIdToRemove);
     }
 
@@ -38,5 +38,9 @@ public class BookService {
 
     private void defaultDestroy() {
         logger.info("default DESTROY in provider in BookService");
+    }
+
+    public boolean hasAllValuesEmpty(Book book) {
+        return book.getAuthor().equals("") && book.getTitle().equals("") && book.getSize() == null;
     }
 }
