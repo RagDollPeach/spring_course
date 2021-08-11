@@ -25,13 +25,13 @@ public class BookRepository implements ProjectRepository<Book>, ApplicationConte
 
     @Override
     public void store(Book book) {
-        book.setId(context.getBean(IdProvider.class).provideId(book));
+        book.setId(book.hashCode());
         logger.info("store new book: " + book);
         repo.add(book);
     }
 
     @Override
-    public boolean removeItemById(String bookIdToRemove) {
+    public boolean removeItemById(Integer bookIdToRemove) {
         for (Book book : retreiveAll()) {
             if (book.getId().equals(bookIdToRemove)) {
                 logger.info("remove book completed: " + book);
