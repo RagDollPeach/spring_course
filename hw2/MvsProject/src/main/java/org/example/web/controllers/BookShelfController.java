@@ -3,25 +3,21 @@ package org.example.web.controllers;
 import org.apache.log4j.Logger;
 import org.example.app.services.BookService;
 import org.example.web.dto.Book;
-import org.example.web.dto.BookIdToRemove;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.validation.ObjectError;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
 @Controller
 @RequestMapping(value = "/books")
-@Scope("singleton")
 public class BookShelfController {
 
-    private final Logger logger = Logger.getLogger(BookShelfController.class);
-    private BookService bookService;
+    private static final Logger logger = Logger.getLogger(BookShelfController.class);
+    private final BookService bookService;
 
     @Autowired
     public BookShelfController(BookService bookService) {
@@ -30,48 +26,105 @@ public class BookShelfController {
 
     @GetMapping("/shelf")
     public String books(Model model) {
-        logger.info(this.toString());
-        appDateViewForBooks(model);
+        logger.info("got book shelf");
+        updateModelForShelf(model);
         return "book_shelf";
     }
 
     @PostMapping("/save")
-    public String saveBook(@Valid Book book, BindingResult bindingResult, Model model) {
-        if (bindingResult.hasFieldErrors("size")) {
-            appDateViewForSave(model, book);
+    public String saveBook(@Valid Book book,
+                           BindingResult bindingResult,
+                           Model model) {
+        if (bindingResult.hasFieldErrors("author") ||
+                bindingResult.hasFieldErrors("title") ||
+                bindingResult.hasFieldErrors("size")) {
+            updateModelForSave(model, book);
             return "book_shelf";
         } else {
-            bookService.saveBook(book);
-            logger.info("current repository size: " + bookService.getAllBooks().size());
+            if (bookService.hasAllValuesEmpty(book)) {
+                logger.info("book has all values empty :( ");
+            } else {
+                bookService.saveBook(book);
+                logger.info("current repository size: " + bookService.getAllBooks().size());
+            }
             return "redirect:/books/shelf";
         }
     }
 
     @PostMapping("/remove")
-    public String removeBook(@Valid BookIdToRemove bookIdToRemove, BindingResult bindingResult, Model model) {
-        if (bindingResult.hasFieldErrors("id")) {
-            appDateViewForRemove(model, bookIdToRemove);
-            return "book_shelf";
+    public String removeBook(@Valid Book book,
+                             BindingResult bindingResult,
+                             Model model) {
+
+        bindingResult.addError(new ObjectError("", "message"));
+
+        //если есть id удаляем по id
+        if (book.getId() != null) {
+            if (bindingResult.hasFieldErrors("id")) {
+                updateModelForRemove(model, book, bindingResult);
+                return "book_shelf";
+            } else {
+                bookService.removeBookById(book.getId());
+                return "redirect:/books/shelf";
+            }
+            //если есть автор удаляем по автору
+        } else if (!book.getAuthor().equals("")) {
+            if (bindingResult.hasFieldErrors("author")) {
+                updateModelForRemove(model, book, bindingResult);
+                return "book_shelf";
+            } else {
+                //fixme реализовать удаление по автору
+                return "redirect:/books/shelf";
+            }
+            //если есть титульник удаляем по титульнику
+        } else if (!book.getTitle().equals("")) {
+            if (bindingResult.hasFieldErrors("title")) {
+                updateModelForRemove(model, book, bindingResult);
+                return "book_shelf";
+            } else {
+                //fixme реализовать удаление по тайтлу
+                return "redirect:/books/shelf";
+            }
+            //если есть размер удаляем по размеру
+        } else if (book.getSize() != null) {
+            if (bindingResult.hasFieldErrors("size")) {
+                updateModelForRemove(model, book, bindingResult);
+                return "book_shelf";
+            } else {
+                //fixme реализовать удаление по размеру
+                return "redirect:/books/shelf";
+            }
+            //иначе нет ничего возращаем на заглавную
         } else {
-            bookService.removeBookById(bookIdToRemove.getId());
-            return "redirect:/books/shelf";
+            updateModelForRemove(model, book, bindingResult);
+            return "book_shelf";
         }
     }
 
-    private void appDateViewForBooks(Model model) {
+    private void updateModelForRemove(Model model,
+                                      Book book,
+                                      BindingResult bindingResult) {
         model.addAttribute("book", new Book());
-        model.addAttribute("bookIdToRemove", new BookIdToRemove());
+        model.addAttribute("book2Remove", book);
+        model.addAttribute("book2Filter", new Book());
         model.addAttribute("bookList", bookService.getAllBooks());
+
+        model.addAttribute(BindingResult.MODEL_KEY_PREFIX + "book2Remove", bindingResult);
     }
 
-    private void appDateViewForSave(Model model, Book book) {
+    private void updateModelForSave(Model model,
+                                    Book book) {
         model.addAttribute("book", book);
-        model.addAttribute("bookIdToRemove", new BookIdToRemove());
+        model.addAttribute("book2Remove", new Book());
+        model.addAttribute("book2Filter", new Book());
         model.addAttribute("bookList", bookService.getAllBooks());
     }
 
-    private void appDateViewForRemove(Model model, BookIdToRemove bookIdToRemove) {
-        model.addAttribute("bookIdToRemove", bookIdToRemove);
+    private void updateModelForShelf(Model model) {
+        model.addAttribute("book", new Book());
+        model.addAttribute("book2Remove", new Book());
+        model.addAttribute("book2Filter", new Book());
         model.addAttribute("bookList", bookService.getAllBooks());
     }
+
 }
