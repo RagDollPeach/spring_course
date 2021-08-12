@@ -32,9 +32,7 @@ public class BookShelfController {
     }
 
     @PostMapping("/save")
-    public String saveBook(@Valid Book book,
-                           BindingResult bindingResult,
-                           Model model) {
+    public String saveBook(@Valid Book book, BindingResult bindingResult, Model model) {
         if (bindingResult.hasFieldErrors("author") ||
                 bindingResult.hasFieldErrors("title") ||
                 bindingResult.hasFieldErrors("size")) {
@@ -52,14 +50,10 @@ public class BookShelfController {
     }
 
     @PostMapping("/remove")
-    public String removeBook(@Valid Book book,
-                             BindingResult bindingResult,
-                             Model model) {
-
+    public String removeBook(@Valid Book book, BindingResult bindingResult, Model model) {
         bindingResult.addError(new ObjectError("", "message"));
-
         //если есть id удаляем по id
-        if (book.getId() != null) {
+        if (!book.getId().isEmpty()) {
             if (bindingResult.hasFieldErrors("id")) {
                 updateModelForRemove(model, book, bindingResult);
                 return "book_shelf";
@@ -73,7 +67,7 @@ public class BookShelfController {
                 updateModelForRemove(model, book, bindingResult);
                 return "book_shelf";
             } else {
-                //fixme реализовать удаление по автору
+                bookService.removeAllByAuthor(book.getAuthor());
                 return "redirect:/books/shelf";
             }
             //если есть титульник удаляем по титульнику
@@ -82,7 +76,7 @@ public class BookShelfController {
                 updateModelForRemove(model, book, bindingResult);
                 return "book_shelf";
             } else {
-                //fixme реализовать удаление по тайтлу
+                bookService.removeAllByTitle(book.getTitle());
                 return "redirect:/books/shelf";
             }
             //если есть размер удаляем по размеру
@@ -91,7 +85,7 @@ public class BookShelfController {
                 updateModelForRemove(model, book, bindingResult);
                 return "book_shelf";
             } else {
-                //fixme реализовать удаление по размеру
+                bookService.removeAllBySize(book.getSize());
                 return "redirect:/books/shelf";
             }
             //иначе нет ничего возращаем на заглавную
@@ -101,9 +95,7 @@ public class BookShelfController {
         }
     }
 
-    private void updateModelForRemove(Model model,
-                                      Book book,
-                                      BindingResult bindingResult) {
+    private void updateModelForRemove(Model model, Book book, BindingResult bindingResult) {
         model.addAttribute("book", new Book());
         model.addAttribute("book2Remove", book);
         model.addAttribute("book2Filter", new Book());
@@ -112,8 +104,7 @@ public class BookShelfController {
         model.addAttribute(BindingResult.MODEL_KEY_PREFIX + "book2Remove", bindingResult);
     }
 
-    private void updateModelForSave(Model model,
-                                    Book book) {
+    private void updateModelForSave(Model model, Book book) {
         model.addAttribute("book", book);
         model.addAttribute("book2Remove", new Book());
         model.addAttribute("book2Filter", new Book());

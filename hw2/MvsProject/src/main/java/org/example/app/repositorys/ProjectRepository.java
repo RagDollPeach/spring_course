@@ -7,5 +7,12 @@ public interface ProjectRepository<T> {
 
     void store(T book);
 
-    boolean removeItemById(Integer bookIdToRemove);
+    void removeItemById(String bookIdToRemove);
+
+    void removeAllByAuthor(String author);
+
+    void removeAllByTitle(String title);
+
+    void removeAllBySize(Integer size);
+
 }

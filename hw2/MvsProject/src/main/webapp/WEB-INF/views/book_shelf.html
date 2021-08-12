@@ -30,7 +30,7 @@
     </style>
 </head>
 <body>
-<a href="/login">go to login</a>
+<a href="/simple_mvc_war_exploded/login">go to login</a>
 
 <div id="root_container">
     <h3>Saving books</h3>
@@ -77,38 +77,31 @@
                 <td>
                     <input type="text" placeholder="remove by id" th:field="*{id}">
                 </td>
-                <td th:if="${#fields.hasErrors('id')}">
-                    <p>Wrong id</p>
-                </td>
+
             </tr>
 
             <tr>
                 <td>
                     <input type="text" placeholder="remove by author" th:field="*{author}">
                 </td>
-                <td th:if="${#fields.hasErrors('author')}">
-                    <p>Wrong author</p>
-                </td>
+
             </tr>
 
             <tr>
                 <td>
                     <input type="text" placeholder="remove by title" th:field="*{title}">
                 </td>
-                <td th:if="${#fields.hasErrors('title')}">
-                    <p>Wrong title</p>
-                </td>
+
             </tr>
 
             <tr>
                 <td>
                     <input type="text" placeholder="remove by size" th:field="*{size}">
                 </td>
-                <td th:if="${#fields.hasErrors('size')}">
-                    <p>Wrong size</p>
-                </td>
             </tr>
-
+            <td th:if="${#fields.hasErrors()}">
+                <p>Wrong input, insert author, title, or size of the book</p>
+            </td>
             <tr>
                 <td>
                     <input type="submit" value="remove">

@@ -25,20 +25,50 @@ public class BookRepository implements ProjectRepository<Book>, ApplicationConte
 
     @Override
     public void store(Book book) {
-        book.setId(book.hashCode());
+        book.setId(context.getBean(IdProvider.class).provideId(book));
         logger.info("store new book: " + book);
         repo.add(book);
     }
 
     @Override
-    public boolean removeItemById(Integer bookIdToRemove) {
+    public void removeItemById(String bookIdToRemove) {
         for (Book book : retreiveAll()) {
             if (book.getId().equals(bookIdToRemove)) {
                 logger.info("remove book completed: " + book);
-                return repo.remove(book);
+                repo.remove(book);
+                return;
             }
         }
-        return false;
+    }
+
+    @Override
+    public void removeAllByAuthor(String author) {
+        for (Book book : retreiveAll()) {
+            if (book.getAuthor().equals(author)) {
+                logger.info("remove books completed: " + book);
+                repo.remove(book);
+            }
+        }
+    }
+
+    @Override
+    public void removeAllByTitle(String title) {
+        for (Book book : retreiveAll()) {
+            if (book.getTitle().equals(title)) {
+                logger.info("remove books completed: " + book);
+                repo.remove(book);
+            }
+        }
+    }
+
+    @Override
+    public void removeAllBySize(Integer size) {
+        for (Book book : retreiveAll()) {
+            if (book.getSize().equals(size)) {
+                logger.info("remove books completed: " + book);
+                repo.remove(book);
+            }
+        }
     }
 
     @Override
