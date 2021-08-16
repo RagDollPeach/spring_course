@@ -53,7 +53,7 @@ public class BookShelfController {
     public String removeBook(@Valid Book book, BindingResult bindingResult, Model model) {
         bindingResult.addError(new ObjectError("", "message"));
         //если есть id удаляем по id
-        if (!book.getId().isEmpty()) {
+        if (book.getId() != null) {
             if (bindingResult.hasFieldErrors("id")) {
                 updateModelForRemove(model, book, bindingResult);
                 return "book_shelf";

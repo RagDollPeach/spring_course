@@ -6,7 +6,7 @@ import javax.validation.constraints.NotNull;
 
 public class Book {
     @NotEmpty
-    private String id;
+    private Integer id;
     @NotEmpty
     private String author;
     @NotEmpty
@@ -15,11 +15,11 @@ public class Book {
     @NotNull
     private Integer size;
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
