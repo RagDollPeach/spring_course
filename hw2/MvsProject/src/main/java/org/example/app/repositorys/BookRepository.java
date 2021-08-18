@@ -7,6 +7,7 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -18,7 +19,6 @@ import java.util.List;
 public class BookRepository implements ProjectRepository<Book>, ApplicationContextAware {
 
     private final Logger logger = Logger.getLogger(BookRepository.class);
-    // private final List<Book> repo = new ArrayList<>();
     private ApplicationContext context;
 
     private final NamedParameterJdbcTemplate jdbcTemplate;
@@ -43,49 +43,46 @@ public class BookRepository implements ProjectRepository<Book>, ApplicationConte
 
     @Override
     public void store(Book book) {
-        // book.setId(context.getBean(IdProvider.class).provideId(book));
+        MapSqlParameterSource parameterSource = new MapSqlParameterSource();
+        parameterSource.addValue("author", book.getAuthor());
+        parameterSource.addValue("title", book.getTitle());
+        parameterSource.addValue("size", book.getSize());
+        jdbcTemplate.update("INSERT INTO books(author,title,size) VALUES(:author,:title,:size)", parameterSource);
         logger.info("store new book: " + book);
-       // repo.add(book);
     }
 
     @Override
     public void removeItemById(Integer bookIdToRemove) {
-        for (Book book : retreiveAll()) {
-            if (book.getId().equals(bookIdToRemove)) {
-                logger.info("remove book completed: " + book);
-               // repo.remove(book);
-            }
-        }
+        MapSqlParameterSource parameterSource = new MapSqlParameterSource();
+        parameterSource.addValue("id", bookIdToRemove);
+        jdbcTemplate.update("DELETE FROM books WHERE id = :id", parameterSource);
+        logger.info("remove book completed: ");
     }
 
     @Override
     public void removeAllByAuthor(String author) {
-        for (Book book : retreiveAll()) {
-            if (book.getAuthor().equals(author)) {
-                logger.info("remove books completed: " + book);
-               // repo.remove(book);
-            }
-        }
+        MapSqlParameterSource parameterSource = new MapSqlParameterSource();
+        parameterSource.addValue("author", author);
+        jdbcTemplate.update("DELETE FROM books WHERE author = :author", parameterSource);
+        logger.info("remove books completed");
+
+
     }
 
     @Override
     public void removeAllByTitle(String title) {
-        for (Book book : retreiveAll()) {
-            if (book.getTitle().equals(title)) {
-                logger.info("remove books completed: " + book);
-               // repo.remove(book);
-            }
-        }
+        MapSqlParameterSource parameterSource = new MapSqlParameterSource();
+        parameterSource.addValue("title", title);
+        jdbcTemplate.update("DELETE FROM books WHERE title = :title", parameterSource);
+        logger.info("remove books completed");
     }
 
     @Override
     public void removeAllBySize(Integer size) {
-        for (Book book : retreiveAll()) {
-            if (book.getSize().equals(size)) {
-                logger.info("remove books completed: " + book);
-               // repo.remove(book);
-            }
-        }
+        MapSqlParameterSource parameterSource = new MapSqlParameterSource();
+        parameterSource.addValue("size", size);
+        jdbcTemplate.update("DELETE FROM books WHERE size = :size", parameterSource);
+        logger.info("remove books completed");
     }
 
     @Override

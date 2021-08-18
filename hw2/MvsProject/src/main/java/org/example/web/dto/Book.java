@@ -5,7 +5,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 public class Book {
-    @NotEmpty
+    @NotNull
     private Integer id;
     @NotEmpty
     private String author;
@@ -50,7 +50,7 @@ public class Book {
     @Override
     public String toString() {
         return "Book{" +
-                "id='" + id + '\'' +
+                "id=" + id +
                 ", author='" + author + '\'' +
                 ", title='" + title + '\'' +
                 ", size=" + size +

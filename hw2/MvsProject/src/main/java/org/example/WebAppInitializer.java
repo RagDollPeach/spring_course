@@ -3,6 +3,7 @@ package org.example;
 import org.example.app.config.AppContextConfig;
 import org.example.web.config.WebContextConfig;
 import org.h2.server.web.WebServlet;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
@@ -11,6 +12,7 @@ import org.springframework.web.servlet.DispatcherServlet;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 
+@Configuration
 public class WebAppInitializer implements WebApplicationInitializer {
 
     @Override
