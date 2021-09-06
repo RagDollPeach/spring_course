@@ -104,7 +104,6 @@ public class BookShelfController {
         model.addAttribute("book2Remove", book);
         model.addAttribute("book2Filter", new Book());
         model.addAttribute("bookList", bookService.getAllBooks());
-
         model.addAttribute(BindingResult.MODEL_KEY_PREFIX + "book2Remove", bindingResult);
     }
 
@@ -123,7 +122,7 @@ public class BookShelfController {
     }
 
     @PostMapping("/uploadFile")
-    public String uploadFile(@RequestParam("file")MultipartFile file) throws Exception {
+    public String uploadFile(@RequestParam("file") MultipartFile file) throws Exception {
         String name = file.getOriginalFilename();
         byte[] bytes = file.getBytes();
 
@@ -134,10 +133,11 @@ public class BookShelfController {
         }
 
         File serverFile = new File(dir.getAbsolutePath() + File.separator + name);
-        BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
-        stream.write(bytes);
-        stream.close();
-
+        try (BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile))) {
+            stream.write(bytes);
+        } catch (NullPointerException ex) {
+            logger.info(ex.getMessage());
+        }
         logger.info("new file saved at: " + serverFile.getAbsolutePath());
 
         return "redirect:/books/shelf";
