@@ -1,6 +1,7 @@
 package org.example.web.controllers;
 
 import org.apache.log4j.Logger;
+import org.example.app.exeptions.BookShelfLoginException;
 import org.example.app.services.BookService;
 import org.example.web.dto.Book;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.validation.Valid;
 import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 
 @Controller
@@ -135,11 +137,17 @@ public class BookShelfController {
         File serverFile = new File(dir.getAbsolutePath() + File.separator + name);
         try (BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile))) {
             stream.write(bytes);
-        } catch (NullPointerException ex) {
-            logger.info(ex.getMessage());
+        } catch (FileNotFoundException ex) {
+            throw new BookShelfLoginException("Please select file");
         }
         logger.info("new file saved at: " + serverFile.getAbsolutePath());
 
         return "redirect:/books/shelf";
+    }
+
+    @ExceptionHandler(BookShelfLoginException.class)
+    public String handleError(Model model, BookShelfLoginException exception) {
+        model.addAttribute("fileNotFound", exception.getMassage());
+        return "errors/fileNotFound";
     }
 }
