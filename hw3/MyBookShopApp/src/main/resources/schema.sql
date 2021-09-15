@@ -1,4 +1,10 @@
 DROP TABLE IF EXISTS books;
+DROP TABLE IF EXISTS authors;
+
+CREATE TABLE authors(
+    id int AUTO_INCREMENT primary key,
+    name varchar(1000) not null
+);
 
 CREATE TABLE  books(
 id INT AUTO_INCREMENT PRIMARY KEY,

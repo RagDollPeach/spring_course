@@ -1,6 +1,6 @@
 package com.example.MyBookShopApp.data;
 
-public class Books {
+public class Book {
 
     private Integer id;
     private String author;
