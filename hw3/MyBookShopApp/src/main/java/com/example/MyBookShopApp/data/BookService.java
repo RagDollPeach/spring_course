@@ -13,8 +13,6 @@ import java.nio.file.Paths;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 @Service
 public class BookService {
@@ -26,18 +24,22 @@ public class BookService {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+    public List<String> setupDataBase() {
+        List<String> list = new ArrayList<>(getNames());
+        for (int i = 1; i < list.size(); i++) {
+            jdbcTemplate.update("INSERT INTO authors (id , name) VALUES (?, ?)",i , list.get(i));
+        }
+        return list;
+    }
+
     public List<String> getNames() {
         String htmlFile = parseFile();
         List<String> list = new ArrayList<>();
         Document doc = Jsoup.parse(htmlFile);
-        Elements elements = doc.getElementsByTag("a");
+        Elements elements = doc.getElementsByClass("Authors-item");
 
         for (Element element : elements) {
-            Pattern pattern = Pattern.compile(".{2,}\\s[А-Я].+");
-            Matcher matcher = pattern.matcher(element.text());
-            while (matcher.find()) {
-                list.add(matcher.group());
-            }
+            list.add(element.text());
         }
         return list;
     }

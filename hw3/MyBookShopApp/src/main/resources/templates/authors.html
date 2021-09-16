@@ -105,6 +105,7 @@
               <h2 class="Authors-title" id="a">А
               </h2>
               <div class="Authors-letter">
+                <div class="Authors-item" th:each="author : ${authors}"><a href="/bookshop/authors/biography" th:text="${author.name}"></a></div>
                   <!--                <div class="Authors-item"><a href="/bookshop/authors/biography">Абгарян Наринэ</a>-->
 <!--                </div>-->
 <!--                <div class="Authors-item"><a href="/bookshop/authors/biography">Абдуллаев Чингиз</a>-->
@@ -210,8 +211,7 @@
 <!--                <div class="Authors-item"><a href="/bookshop/authors/biography">Ахерн Сесилия</a>-->
 <!--                </div>-->
 <!--              </div>-->
-<!--              <h2 class="Authors-title" id="b">Б-->
-<!--              </h2>-->
+<!--             <h2 class="Authors-title" id="b">Б</h2>-->
 <!--              <div class="Authors-letter">-->
 <!--                <div class="Authors-item"><a href="/bookshop/authors/biography">Байбаков Иван</a>-->
 <!--                </div>-->
