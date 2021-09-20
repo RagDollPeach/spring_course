@@ -5,6 +5,14 @@ public class Author {
     private Integer id;
     private String name;
 
+    public Author(String name) {
+        this.name = name;
+    }
+
+    public Author() {
+
+    }
+
     @Override
     public String toString() {
         return "Author{" +

@@ -2,7 +2,7 @@ package com.example.MyBookShopApp.data;
 
 public class Book {
 
-    private Integer id;
+    private Integer bookId;
     private String author;
     private String title;
     private String priceOld;
@@ -11,7 +11,7 @@ public class Book {
     @Override
     public String toString() {
         return "Book{" +
-                "id=" + id +
+                "bookId=" + bookId +
                 ", author='" + author + '\'' +
                 ", title='" + title + '\'' +
                 ", priceOld='" + priceOld + '\'' +
@@ -19,12 +19,12 @@ public class Book {
                 '}';
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getBookId() {
+        return bookId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setBookId(Integer bookId) {
+        this.bookId = bookId;
     }
 
     public String getAuthor() {
