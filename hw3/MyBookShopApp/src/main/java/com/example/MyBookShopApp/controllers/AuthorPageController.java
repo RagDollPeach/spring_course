@@ -20,7 +20,7 @@ public class AuthorPageController {
 
     @GetMapping("/authors")
     public String authorsPage(Model model) {
-        model.addAttribute("authors", bookService.getAuthors());
+        model.addAttribute("all_authors", bookService.inLineAuthors());
         return "authors";
     }
 }

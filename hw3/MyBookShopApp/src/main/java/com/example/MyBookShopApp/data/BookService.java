@@ -45,11 +45,9 @@ public class BookService {
     }
 
     public List<AuthorSection> inLineAuthors() {
-        Map<String, List<Author>> inLineAuthors = getAuthors().stream().collect(Collectors.groupingBy(author -> author.getName().substring(0,1)));
-        List<AuthorSection> authorSections = new ArrayList<>();
-        for (Map.Entry<String, List<Author>> map: inLineAuthors.entrySet()) {
-            authorSections.add(new AuthorSection(map.getKey(),map.getValue()));
-        }
-        return authorSections;
+        Map<String, List<Author>> inLineAuthors =
+                getAuthors().stream().collect(Collectors.groupingBy(author -> author.getName().substring(0,1)));
+        return inLineAuthors.entrySet().stream()
+                .map(entry -> new AuthorSection(entry.getKey(), entry.getValue())).collect(Collectors.toList());
     }
 }
