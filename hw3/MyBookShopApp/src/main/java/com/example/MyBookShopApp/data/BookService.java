@@ -3,10 +3,11 @@ package com.example.MyBookShopApp.data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
-import org.springframework.util.AutoPopulatingList;
+
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -49,5 +50,27 @@ public class BookService {
                 getAuthors().stream().collect(Collectors.groupingBy(author -> author.getName().substring(0,1)));
         return inLineAuthors.entrySet().stream()
                 .map(entry -> new AuthorSection(entry.getKey(), entry.getValue())).collect(Collectors.toList());
+    }
+
+    public List<String> capitalLetter() {
+        return inLineAuthors().stream().map(AuthorSection::getCapitalLetter).collect(Collectors.toList());
+    }
+
+    public List<String> authorsNames() {
+        return inLineAuthors().stream().map(AuthorSection::getAuthors)
+                .flatMap(Collection::stream).map(Author::getName).collect(Collectors.toList());
+    }
+
+    public List<String> testModel() {
+        List<String> list = new ArrayList<>();
+        for (AuthorSection as: inLineAuthors()) {
+            String a = as.getCapitalLetter();
+            list.add(a);
+            for (Author au: as.getAuthors()) {
+                String b = au.getName();
+                list.add(b);
+            }
+        }
+        return list;
     }
 }
