@@ -51,26 +51,5 @@ public class BookService {
         return inLineAuthors.entrySet().stream()
                 .map(entry -> new AuthorSection(entry.getKey(), entry.getValue())).collect(Collectors.toList());
     }
-
-    public List<String> capitalLetter() {
-        return inLineAuthors().stream().map(AuthorSection::getCapitalLetter).collect(Collectors.toList());
-    }
-
-    public List<String> authorsNames() {
-        return inLineAuthors().stream().map(AuthorSection::getAuthors)
-                .flatMap(Collection::stream).map(Author::getName).collect(Collectors.toList());
-    }
-
-    public List<String> testModel() {
-        List<String> list = new ArrayList<>();
-        for (AuthorSection as: inLineAuthors()) {
-            String a = as.getCapitalLetter();
-            list.add(a);
-            for (Author au: as.getAuthors()) {
-                String b = au.getName();
-                list.add(b);
-            }
-        }
-        return list;
-    }
+    
 }
