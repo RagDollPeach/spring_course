@@ -10,6 +10,6 @@ public class DetectivePageController {
 
     @GetMapping("/detective")
     public String detectivePage() {
-        return "detective";
+        return "/genres/detective";
     }
 }

@@ -3,7 +3,8 @@ DROP TABLE IF EXISTS authors;
 
 CREATE TABLE authors(
     id int AUTO_INCREMENT primary key,
-    name varchar(1000) not null
+    first_name varchar(250) not null,
+    last_name varchar(250) not null
 );
 
 CREATE TABLE  books(
