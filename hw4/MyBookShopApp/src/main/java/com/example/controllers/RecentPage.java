@@ -1,7 +1,7 @@
-package com.example.MyBookShopApp.controllers;
+package com.example.controllers;
 
-import com.example.MyBookShopApp.data.Book;
-import com.example.MyBookShopApp.data.BookService;
+import com.example.data.Book;
+import com.example.data.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,22 +10,22 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import java.util.List;
 
 @Controller
-public class MainPageController {
+public class RecentPage {
 
     private final BookService bookService;
 
     @Autowired
-    public MainPageController(BookService bookService) {
+    public RecentPage(BookService bookService) {
         this.bookService = bookService;
     }
 
-    @ModelAttribute("recommendedBooks")
-    public List<Book> recommendedBooks() {
+    @ModelAttribute("booksList")
+    public List<Book> bookList(){
         return bookService.getBooksData();
     }
 
-    @GetMapping("/")
-    public String mainPage() {
-        return "index";
+    @GetMapping("/recent")
+    public String recentPage() {
+        return "/books/recent";
     }
 }

@@ -1,10 +1,10 @@
-package com.example.MyBookShopApp.controllers;
+package com.example.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class AboutPageController {
+public class AboutPage {
 
     @GetMapping("/about")
     public String aboutPage() {
