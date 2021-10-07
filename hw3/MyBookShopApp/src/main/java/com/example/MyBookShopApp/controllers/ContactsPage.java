@@ -4,10 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class PostponedPageController {
+public class ContactsPage {
 
-    @GetMapping("/postponed")
-    public String postponedPage() {
-        return "postponed";
+    @GetMapping("/contacts")
+    public String contactsPage() {
+        return "contacts";
     }
 }

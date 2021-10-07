@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import java.util.List;
 
 @Controller
-public class MainPageController {
+public class MainPage {
 
     private final BookService bookService;
 
     @Autowired
-    public MainPageController(BookService bookService) {
+    public MainPage(BookService bookService) {
         this.bookService = bookService;
     }
 

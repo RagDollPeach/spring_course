@@ -12,12 +12,12 @@ import java.util.Map;
 
 
 @Controller
-public class AuthorPageController {
+public class AuthorPage {
 
     private final AuthorService authorService;
 
     @Autowired
-    public AuthorPageController(AuthorService authorService) {
+    public AuthorPage(AuthorService authorService) {
         this.authorService = authorService;
     }
 
