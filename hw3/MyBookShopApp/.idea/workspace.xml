@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="19c2069e-b965-40e3-ad72-4c6cf2cb336a" name="Changes" comment="BookShop Model 4 (3)" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/../.." value="modul3" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/src/main/resources/spring-frontend" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1y53r2PynRNiyjQhhPqKeE2bkjn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.MyBookShopApp.controllers" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Spring\hw3\MyBookShopApp\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.MyBookShopAppApplication">
+    <configuration name="MyBookShopAppApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MyBookShopApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.MyBookShopApp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.MyBookShopApp" />
+      <option name="MAIN_CLASS_NAME" value="com.example.MyBookShopApp.MyBookShopAppApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyBookShopAppApplicationTests.testAuthorsMap" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MyBookShopApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.MyBookShopApp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.MyBookShopApp" />
+      <option name="MAIN_CLASS_NAME" value="com.example.MyBookShopApp.MyBookShopAppApplicationTests" />
+      <option name="METHOD_NAME" value="testAuthorsMap" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyBookShopAppApplicationTests.testHtmlParser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MyBookShopApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.MyBookShopApp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.MyBookShopApp" />
+      <option name="MAIN_CLASS_NAME" value="com.example.MyBookShopApp.MyBookShopAppApplicationTests" />
+      <option name="METHOD_NAME" value="testHtmlParser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyBookShopAppApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="MyBookShopApp" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.MyBookShopApp.MyBookShopAppApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MyBookShopAppApplicationTests.testAuthorsMap" />
+        <item itemvalue="JUnit.MyBookShopAppApplicationTests.contextLoads" />
+        <item itemvalue="JUnit.MyBookShopAppApplicationTests.testHtmlParser" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="19c2069e-b965-40e3-ad72-4c6cf2cb336a" name="Changes" comment="" />
+      <created>1631527817647</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1631527817647</updated>
+      <workItem from="1631527818997" duration="5192000" />
+      <workItem from="1631533097903" duration="19637000" />
+      <workItem from="1631637654426" duration="83000" />
+      <workItem from="1631637793846" duration="14629000" />
+      <workItem from="1631686454823" duration="3947000" />
+      <workItem from="1631716926337" duration="5581000" />
+      <workItem from="1631800512408" duration="12696000" />
+      <workItem from="1631906143075" duration="5827000" />
+      <workItem from="1632074251453" duration="131000" />
+      <workItem from="1632123278066" duration="12469000" />
+      <workItem from="1632234793525" duration="3074000" />
+      <workItem from="1632310809439" duration="1563000" />
+      <workItem from="1632331270113" duration="6526000" />
+      <workItem from="1632341394628" duration="30000" />
+      <workItem from="1632407268897" duration="4403000" />
+      <workItem from="1632411757787" duration="24000" />
+      <workItem from="1632417111497" duration="1156000" />
+      <workItem from="1632499098487" duration="520000" />
+      <workItem from="1632728123749" duration="12387000" />
+      <workItem from="1632908127826" duration="454000" />
+      <workItem from="1632998082180" duration="10934000" />
+      <workItem from="1633083568955" duration="4976000" />
+      <workItem from="1633341248164" duration="3865000" />
+      <workItem from="1633345182843" duration="323000" />
+      <workItem from="1633355523253" duration="3440000" />
+      <workItem from="1633427154651" duration="13949000" />
+      <workItem from="1633506697924" duration="24365000" />
+      <workItem from="1633601621798" duration="3310000" />
+    </task>
+    <task id="LOCAL-00001" summary="BookShop first commit">
+      <created>1631553287411</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1631553287411</updated>
+    </task>
+    <task id="LOCAL-00002" summary="BookShop">
+      <created>1631553365881</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1631553365881</updated>
+    </task>
+    <task id="LOCAL-00003" summary="BookShop 1">
+      <created>1631690727808</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1631690727808</updated>
+    </task>
+    <task id="LOCAL-00004" summary="BookShop 2">
+      <created>1631813877434</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1631813877434</updated>
+    </task>
+    <task id="LOCAL-00005" summary="BookShop 3">
+      <created>1632145425764</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1632145425764</updated>
+    </task>
+    <task id="LOCAL-00006" summary="BookShop 4">
+      <created>1632311391180</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1632311391180</updated>
+    </task>
+    <task id="LOCAL-00007" summary="BookShop 5">
+      <created>1632341191688</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1632341191688</updated>
+    </task>
+    <task id="LOCAL-00008" summary="BookShop 6">
+      <created>1632499609367</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1632499609367</updated>
+    </task>
+    <task id="LOCAL-00009" summary="BookShop 7">
+      <created>1632743238752</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1632743238752</updated>
+    </task>
+    <task id="LOCAL-00010" summary="BookShop Model 4 first">
+      <created>1633357493575</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1633357493575</updated>
+    </task>
+    <task id="LOCAL-00011" summary="BookShop Model 4 (2)">
+      <created>1633531400233</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1633531400233</updated>
+    </task>
+    <task id="LOCAL-00012" summary="BookShop Model 4 (3)">
+      <created>1633606505143</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1633606505143</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="BookShop first commit" />
+    <MESSAGE value="BookShop" />
+    <MESSAGE value="BookShop 1" />
+    <MESSAGE value="BookShop 2" />
+    <MESSAGE value="BookShop 3" />
+    <MESSAGE value="BookShop 4" />
+    <MESSAGE value="BookShop 5" />
+    <MESSAGE value="BookShop 6" />
+    <MESSAGE value="BookShop 7" />
+    <MESSAGE value="BookShop Model 4 first" />
+    <MESSAGE value="BookShop Model 4 (2)" />
+    <MESSAGE value="BookShop Model 4 (3)" />
+    <option name="LAST_COMMIT_MESSAGE" value="BookShop Model 4 (3)" />
+  </component>
+</project>
