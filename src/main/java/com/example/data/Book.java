@@ -1,32 +1,30 @@
 package com.example.data;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "books")
 public class Book {
 
-    private Integer bookId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer author_id;
     private String authorFirstName;
     private String authorLastName;
     private String title;
-    private String priceOld;
+    private String price_old;
     private String price;
 
-    @Override
-    public String toString() {
-        return "Book{" +
-                "bookId=" + bookId +
-                ", authorFirstName='" + authorFirstName + '\'' +
-                ", authorLastName='" + authorLastName + '\'' +
-                ", title='" + title + '\'' +
-                ", priceOld='" + priceOld + '\'' +
-                ", price='" + price + '\'' +
-                '}';
+    public Integer getAuthor_id() {
+        return author_id;
     }
 
-    public Integer getBookId() {
-        return bookId;
-    }
-
-    public void setBookId(Integer bookId) {
-        this.bookId = bookId;
+    public void setAuthor_id(Integer author_id) {
+        this.author_id = author_id;
     }
 
     public String getAuthorFirstName() {
@@ -53,12 +51,12 @@ public class Book {
         this.title = title;
     }
 
-    public String getPriceOld() {
-        return priceOld;
+    public String getPrice_old() {
+        return price_old;
     }
 
-    public void setPriceOld(String priceOld) {
-        this.priceOld = priceOld;
+    public void setPrice_old(String price_old) {
+        this.price_old = price_old;
     }
 
     public String getPrice() {
