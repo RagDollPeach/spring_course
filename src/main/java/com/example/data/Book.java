@@ -12,12 +12,21 @@ public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private Integer author_id;
     private String authorFirstName;
     private String authorLastName;
     private String title;
     private String price_old;
     private String price;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public Integer getAuthor_id() {
         return author_id;
