@@ -5,6 +5,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -17,19 +18,16 @@ public class BookService {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-
     public List<Book> getBooksData() {
-        List<Book> books = jdbcTemplate.query("SELECT * FROM books b JOIN authors a ON b.author_id = a.id", (ResultSet rs, int rowNum) -> {
+        List<Book> books = jdbcTemplate.query("SELECT * FROM books", (ResultSet rs, int rowNum) -> {
             Book book = new Book();
-            book.setAuthor_id(rs.getInt("author_id"));
-            book.setAuthorFirstName(rs.getString("first_name"));
-            book.setAuthorLastName(rs.getString("last_name"));
+            book.setId(rs.getInt("id"));
+            book.setAuthor(rs.getString("author"));
             book.setTitle(rs.getString("title"));
             book.setPrice_old(rs.getString("price_old"));
             book.setPrice(rs.getString("price"));
             return book;
         });
-        return books;
+        return new ArrayList<>(books);
     }
-    
 }
