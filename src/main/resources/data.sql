@@ -1,25 +1,86 @@
-insert into books (author, title, price_old, price) values ('Leonie Janauschek', 'exploit real-time e-commerce', '$203.23', '$43.37');
-insert into books (author, title, price_old, price) values ('Carmina Mawtus', 'utilize real-time interfaces', '$260.31', '$35.96');
-insert into books (author, title, price_old, price) values ('Christoffer Mowbray', 'extend strategic e-services', '$272.00', '$151.04');
-insert into books (author, title, price_old, price) values ('Blakelee Skipperbottom', 'iterate integrated solutions', '$271.58', '$141.40');
-insert into books (author, title, price_old, price) values ('Zeb MacCulloch', 'cultivate magnetic e-commerce', '$278.43', '$54.44');
-insert into books (author, title, price_old, price) values ('Stacey Sigmund', 'architect vertical ROI', '$282.54', '$102.61');
-insert into books (author, title, price_old, price) values ('Law Bragginton', 'disintermediate extensible architectures', '$295.38', '$181.27');
-insert into books (author, title, price_old, price) values ('Karmen Jossel', 'extend leading-edge methodologies', '$283.08', '$97.96');
-insert into books (author, title, price_old, price) values ('Mareah Rushmere', 'integrate one-to-one systems', '$258.51', '$52.25');
-insert into books (author, title, price_old, price) values ('Amalea Janusz', 'revolutionize 24/7 infrastructures', '$260.79', '$33.69');
-insert into books (author, title, price_old, price) values ('Sanders Clark', 'enhance innovative e-services', '$256.54', '$160.98');
-insert into books (author, title, price_old, price) values ('Jan Reding', 'maximize 24/365 e-tailers', '$262.07', '$34.06');
-insert into books (author, title, price_old, price) values ('Cynthie Merle', 'scale integrated architectures', '$257.66', '$32.97');
-insert into books (author, title, price_old, price) values ('Mindy Ojeda', 'e-enable frictionless web services', '$288.19', '$90.52');
-insert into books (author, title, price_old, price) values ('Jasmina Eglise', 'strategize B2B channels', '$232.27', '$44.83');
-insert into books (author, title, price_old, price) values ('Roxy Allbrook', 'syndicate compelling deliverables', '$287.45', '$101.89');
-insert into books (author, title, price_old, price) values ('Dorene Adamthwaite', 'utilize bleeding-edge users', '$281.37', '$146.21');
-insert into books (author, title, price_old, price) values ('Jakie Beales', 'cultivate 24/365 networks', '$270.99', '$184.76');
-insert into books (author, title, price_old, price) values ('Persis Dunleavy', 'embrace plug-and-play platforms', '$278.36', '$77.71');
-insert into books (author, title, price_old, price) values ('Alanna Perone', 'target innovative paradigms', '$298.94', '$130.01');
-insert into books (author, title, price_old, price) values ('Rosabel Ryves', 'generate open-source e-business', '$276.57', '$113.25');
-insert into books (author, title, price_old, price) values ('Risa Iglesiaz', 'implement user-centric e-markets', '$254.70', '$115.31');
-insert into books (author, title, price_old, price) values ('Jacklin Esley', 'utilize magnetic supply-chains', '$279.70', '$77.86');
-insert into books (author, title, price_old, price) values ('Michelle Polet', 'e-enable dot-com supply-chains', '$297.83', '$110.15');
-insert into books (author, title, price_old, price) values ('Veda xDrance', 'facilitate efficient eyeballs', '$232.30', '$131.48');
+
+insert into author (id,photo,slug, name,description)
+values (1,'photo','slug', 'Tobe Corroyer', 'some text');
+insert into author (id,photo,slug, name,description)
+values (2,'photo','slug', 'Anatola Tilliard','some text');
+insert into author (id,photo,slug, name,description)
+values (3,'photo','slug',  'Dyan Crowest','some text');
+insert into author (id,photo,slug, name,description)
+values (4, 'photo','slug','Alair Gitting','some text');
+insert into author (id,photo,slug, name,description)
+values (5, 'photo','slug','Danell Buller','some text');
+insert into author (id,photo,slug, name,description)
+values (6,'photo','slug', 'Gusti Clamp','some text');
+insert into author (id,photo,slug, name,description)
+values (7, 'photo','slug','Konstance Kefford','some text');
+insert into author (id,photo,slug, name,description)
+values (8,'photo','slug', 'Belia Cattermoul','some text');
+insert into author (id,photo,slug, name,description)
+values (9, 'photo','slug','Lawrence Strathe','some text');
+insert into author (id,photo,slug, name,description)
+values (10,'photo','slug', 'Lynnell Sherme','some text');
+insert into author (id,photo,slug, name,description)
+values (11, 'photo','slug','Clio Lightbourne','some text');
+insert into author (id,photo,slug, name,description)
+values (12,'photo','slug', 'Petronella Matis','some text');
+insert into author (id,photo,slug, name,description)
+values (13,'photo','slug', 'Warren Blunsum','some text');
+insert into author (id,photo,slug, name,description)
+values (14,'photo','slug', 'Merell Antosik','some text');
+insert into author (id,photo,slug, name,description)
+values (15,'photo','slug', 'Cozmo Roads','some text');
+insert into author (id,photo,slug, name,description)
+values (16,'photo','slug', 'Wash Hastler','some text');
+insert into author (id,photo,slug, name,description)
+values (17,'photo','slug', 'Chanda Teall','some text');
+insert into author (id,photo,slug, name,description)
+values (18,'photo','slug', 'Skippie Kubasiewicz','some text');
+insert into author (id,photo,slug, name,description)
+values (19,'photo','slug', 'Lionello Mawditt','some text');
+insert into author (id,photo,slug, name,description)
+values (20,'photo','slug', 'Zelda Shill','some text');
+insert into author (id,photo,slug, name,description)
+values (21,'photo','slug', 'Udale Umney','some text');
+
+insert into book (id, pub_date, is_bestseller, slug , title , image , description, price ,discount )
+values (1, '2021.10.25', 1,'slug' , 'Aerified','image', 'description', 321,1);
+insert into book (id, pub_date, is_bestseller, slug , title , image , description, price ,discount )
+values (2, '2021.10.25', 1,'slug' , 'Home Ing','image', 'description', 321,1);
+insert into book (id, pub_date, is_bestseller, slug , title , image , description, price ,discount )
+values (3, '2021.10.25', 1,'slug' , 'Lotstring','image', 'description', 321,1);
+insert into book (id, pub_date, is_bestseller, slug , title , image , description, price ,discount )
+values (4, '2021.10.25', 1,'slug' , 'Prodder','image', 'description', 321,1);
+insert into book (id, pub_date, is_bestseller, slug , title , image , description, price ,discount )
+values (5, '2021.10.25', 1,'slug' , 'Konklux','image', 'description', 321,1);
+insert into book (id, pub_date, is_bestseller, slug , title , image , description, price ,discount )
+values (6, '2021.10.25', 1,'slug' , 'Viva', 'image', 'description', 321,1);
+insert into book (id, pub_date, is_bestseller, slug , title , image , description, price ,discount )
+values (7, '2021.10.25', 1,'slug' , 'Opela','image', 'description', 321,1);
+insert into book (id, pub_date, is_bestseller, slug , title , image , description, price ,discount )
+values (8, '2021.10.25', 1,'slug' , 'Regrant','image', 'description', 321,1);
+insert into book (id, pub_date, is_bestseller, slug , title , image , description, price ,discount )
+values (9, '2021.10.25', 1,'slug' , 'Lotstring','image', 'description', 321,1);
+insert into book (id, pub_date, is_bestseller, slug , title , image , description, price ,discount )
+values (10, '2021.10.25', 1,'slug' , 'Aerified', 'image', 'description', 321,1);
+insert into book (id, pub_date, is_bestseller, slug , title , image , description, price ,discount )
+values (11, '2021.10.25', 1,'slug' , 'Konklux', 'image', 'description', 321,1);
+insert into book (id, pub_date, is_bestseller, slug , title , image , description, price ,discount )
+values (12, '2021.10.25', 1,'slug' , 'Flexidy', 'image', 'description', 321,1);
+insert into book (id, pub_date, is_bestseller, slug , title , image , description, price ,discount )
+values (13, '2021.10.25', 1,'slug' , 'Tampflex', 'image', 'description', 321,1);
+insert into book (id, pub_date, is_bestseller, slug , title , image , description, price ,discount )
+values (14, '2021.10.25', 1,'slug' , 'Tresom','image', 'description', 321,1);
+insert into book (id, pub_date, is_bestseller, slug , title , image , description, price ,discount )
+values (15, '2021.10.25', 1,'slug' , 'Konklab','image', 'description', 321,1);
+insert into book (id, pub_date, is_bestseller, slug , title , image , description, price ,discount )
+values (16, '2021.10.25', 1,'slug' , 'Subin','image', 'description', 321,1);
+insert into book (id, pub_date, is_bestseller, slug , title , image , description, price ,discount )
+values (17, '2021.10.25', 1,'slug' , 'Stringtough', 'image', 'description', 321,1);
+insert into book (id, pub_date, is_bestseller, slug , title , image , description, price ,discount )
+values (18, '2021.10.25', 1,'slug' , 'Lotstring', 'image', 'description', 321,1);
+insert into book (id, pub_date, is_bestseller, slug , title , image , description, price ,discount )
+values (19, '2021.10.25', 1,'slug' , 'Bamity', 'image', 'description', 321,1);
+insert into book (id, pub_date, is_bestseller, slug , title , image , description, price ,discount )
+values (20, '2021.10.25', 1,'slug' , 'Bamity','image', 'description', 321,1);
+insert into book (id, pub_date, is_bestseller, slug , title , image , description, price ,discount )
+values (21, '2021.10.25', 1,'slug' , 'Cardguard','image', 'description', 321,1);
