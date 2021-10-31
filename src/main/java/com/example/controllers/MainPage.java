@@ -1,7 +1,7 @@
 package com.example.controllers;
 
-import com.example.struct.book.Book;
-import com.example.data.BookService;
+import com.example.service.BookService;
+import com.example.entity.book.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +15,7 @@ public class MainPage {
     private final BookService bookService;
 
     @Autowired
-    public MainPage(BookService bookService) {
+    public MainPage( BookService bookService) {
         this.bookService = bookService;
     }
 

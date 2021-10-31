@@ -1,7 +1,7 @@
 package com.example.controllers;
 
-import com.example.struct.author.Author;
-import com.example.data.AuthorService;
+import com.example.entity.author.Author;
+import com.example.service.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +24,11 @@ public class AuthorPage {
     @ModelAttribute("authorsMap")
     public Map<String, List<Author>> authorsMap() {
         return authorService.getAuthorsMap(); 
+    }
+
+    @ModelAttribute("allAuthors")
+    public List<Author> gatAllAuthors() {
+        return authorService.gatAllAuthors();
     }
 
     @GetMapping("/authors")

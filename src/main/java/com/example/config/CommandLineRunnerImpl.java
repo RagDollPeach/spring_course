@@ -1,8 +1,8 @@
 package com.example.config;
 
-import com.example.data.BookRepository;
-import com.example.struct.test_entity.TestEntity;
-import com.example.data.TestEntityCrudRepository;
+import com.example.repository.BookRepository;
+import com.example.entity.test_entity.TestEntity;
+import com.example.repository.TestEntityCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
@@ -40,9 +40,6 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
         } else {
             throw new NullPointerException();
         }
-        deleteTestEntityById(4L);
-
-
     }
 
     private void deleteTestEntityById(Long id) {

@@ -1,7 +1,7 @@
 package com.example.controllers;
 
-import com.example.struct.book.Book;
-import com.example.data.BookService;
+import com.example.entity.book.Book;
+import com.example.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
