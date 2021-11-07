@@ -1,0 +1,55 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1635855799215-1
+      author: Denchik (generated)
+      changes:
+        - createTable:
+            tableName: book
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: book_pkey
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: pub_date
+                  type: date
+              - column:
+                  constraints:
+                    nullable: false
+                  name: is_bestseller
+                  type: SMALLINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: slug
+                  type: VARCHAR(250)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: title
+                  type: VARCHAR(250)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: image
+                  type: VARCHAR(250)
+              - column:
+                  name: description
+                  type: TEXT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: price
+                  type: VARCHAR(250)
+              - column:
+                  constraints:
+                    nullable: false
+                  defaultValueNumeric: 0
+                  name: discount
+                  type: SMALLINT

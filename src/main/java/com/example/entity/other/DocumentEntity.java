@@ -8,10 +8,10 @@ public class DocumentEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(name = "sort_index",columnDefinition = "INT NOT NULL  DEFAULT 0")
-    private int sortIndex;
+    private Integer sortIndex;
 
     @Column(columnDefinition = "VARCHAR(255) NOT NULL")
     private String slug;
@@ -22,19 +22,19 @@ public class DocumentEntity {
     @Column(columnDefinition = "TEXT NOT NULL")
     private String text;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public int getSortIndex() {
+    public Integer getSortIndex() {
         return sortIndex;
     }
 
-    public void setSortIndex(int sortIndex) {
+    public void setSortIndex(Integer sortIndex) {
         this.sortIndex = sortIndex;
     }
 

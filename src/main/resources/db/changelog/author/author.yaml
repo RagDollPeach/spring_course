@@ -1,0 +1,34 @@
+databaseChangeLog:
+- changeSet:
+    id: 1635855799215-7
+    author: Denchik (generated)
+    changes:
+      - createTable:
+          tableName: author
+          columns:
+            - column:
+                autoIncrement: true
+                constraints:
+                  nullable: false
+                  primaryKey: true
+                  primaryKeyName: author_pkey
+                name: id
+                type: BIGINT
+            - column:
+                constraints:
+                  nullable: false
+                name: photo
+                type: VARCHAR(250)
+            - column:
+                constraints:
+                  nullable: false
+                name: slug
+                type: VARCHAR(250)
+            - column:
+                constraints:
+                  nullable: false
+                name: name
+                type: VARCHAR(250)
+            - column:
+                name: description
+                type: TEXT

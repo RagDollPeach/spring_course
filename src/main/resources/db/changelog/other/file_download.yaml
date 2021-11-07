@@ -1,0 +1,32 @@
+databaseChangeLog:
+- changeSet:
+    id: 1635855799215-2
+    author: Denchik (generated)
+    changes:
+      - createTable:
+          tableName: file_download
+          columns:
+            - column:
+                autoIncrement: true
+                constraints:
+                  nullable: false
+                  primaryKey: true
+                  primaryKeyName: file_download_pkey
+                name: id
+                type: BIGINT
+            - column:
+                constraints:
+                  nullable: false
+                name: user_id
+                type: INTEGER
+            - column:
+                constraints:
+                  nullable: false
+                name: book_id
+                type: INTEGER
+            - column:
+                constraints:
+                  nullable: false
+                defaultValueNumeric: 1
+                name: count
+                type: INTEGER

@@ -1,0 +1,29 @@
+databaseChangeLog:
+- changeSet:
+    id: 1635855799215-15
+    author: Denchik (generated)
+    changes:
+      - createTable:
+          tableName: genre
+          columns:
+            - column:
+                autoIncrement: true
+                constraints:
+                  nullable: false
+                  primaryKey: true
+                  primaryKeyName: genre_pkey
+                name: id
+                type: BIGINT
+            - column:
+                name: parent_id
+                type: INTEGER
+            - column:
+                constraints:
+                  nullable: false
+                name: slug
+                type: VARCHAR(255)
+            - column:
+                constraints:
+                  nullable: false
+                name: name
+                type: VARCHAR(255)

@@ -11,12 +11,11 @@ public class UserContactEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(name = "user_id",columnDefinition = "INT NOT NULL")
-    private int userId;
+    private Integer userId;
 
-    private ContactType type;
 
     @Column(columnDefinition = "SMALLINT NOT NULL")
     private short approved;
@@ -25,7 +24,7 @@ public class UserContactEntity {
     private String code;
 
     @Column(name = "code_trails",columnDefinition = "INT")
-    private int codeTrails;
+    private Integer codeTrails;
 
     @Column(name = "code_time",columnDefinition = "TIMESTAMP")
     private LocalDateTime codeTime;
@@ -33,28 +32,20 @@ public class UserContactEntity {
     @Column(columnDefinition = "VARCHAR(255) NOT NULL")
     private String contact;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public int getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
-    }
-
-    public ContactType getType() {
-        return type;
-    }
-
-    public void setType(ContactType type) {
-        this.type = type;
     }
 
     public short getApproved() {

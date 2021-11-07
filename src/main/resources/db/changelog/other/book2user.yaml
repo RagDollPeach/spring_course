@@ -1,0 +1,36 @@
+databaseChangeLog:
+- changeSet:
+    id: 1635855799215-9
+    author: Denchik (generated)
+    changes:
+      - createTable:
+          tableName: book2user
+          columns:
+            - column:
+                autoIncrement: true
+                constraints:
+                  nullable: false
+                  primaryKey: true
+                  primaryKeyName: book2user_pkey
+                name: id
+                type: BIGINT
+            - column:
+                constraints:
+                  nullable: false
+                name: time
+                type: TIMESTAMP WITHOUT TIME ZONE
+            - column:
+                constraints:
+                  nullable: false
+                name: type_id
+                type: INTEGER
+            - column:
+                constraints:
+                  nullable: false
+                name: book_id
+                type: INTEGER
+            - column:
+                constraints:
+                  nullable: false
+                name: user_id
+                type: INTEGER

@@ -1,0 +1,36 @@
+databaseChangeLog:
+- changeSet:
+    id: 1635855799215-19
+    author: Denchik (generated)
+    changes:
+      - createTable:
+          columns:
+            - column:
+                autoIncrement: true
+                constraints:
+                  nullable: false
+                  primaryKey: true
+                  primaryKeyName: users_pkey
+                name: id
+                type: BIGINT
+            - column:
+                constraints:
+                  nullable: false
+                name: hash
+                type: VARCHAR(255)
+            - column:
+                constraints:
+                  nullable: false
+                name: regtime
+                type: TIMESTAMP WITHOUT TIME ZONE
+            - column:
+                constraints:
+                  nullable: false
+                name: balance
+                type: INTEGER
+            - column:
+                constraints:
+                  nullable: false
+                name: name
+                type: VARCHAR(255)
+          tableName: users

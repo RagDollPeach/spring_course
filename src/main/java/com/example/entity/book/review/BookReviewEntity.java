@@ -9,13 +9,13 @@ public class BookReviewEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(name = "book_id", columnDefinition = "INT NOT NULL")
-    private int bookId;
+    private Integer bookId;
 
     @Column(name = "user_id", columnDefinition = "INT NOT NULL")
-    private int userId;
+    private Integer userId;
 
     @Column(columnDefinition = "TIMESTAMP NOT NULL")
     private LocalDateTime time;
@@ -23,27 +23,27 @@ public class BookReviewEntity {
     @Column(columnDefinition = "TEXT NOT NULL")
     private String text;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public int getBookId() {
+    public Integer getBookId() {
         return bookId;
     }
 
-    public void setBookId(int bookId) {
+    public void setBookId(Integer bookId) {
         this.bookId = bookId;
     }
 
-    public int getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 

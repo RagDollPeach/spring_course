@@ -1,8 +1,5 @@
 package com.example.entity.book.links;
 
-import com.example.entity.author.Author;
-import com.example.entity.book.Book;
-
 import javax.persistence.*;
 
 @Entity
@@ -11,38 +8,38 @@ public class Book2AuthorEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    @OneToOne
-    @JoinColumn(name = "book_id" ,referencedColumnName = "id")
-    private Book bookId;
-    @OneToOne
-    @JoinColumn(name = "author_id", referencedColumnName = "id")
-    private Author authorId;
+    private Long id;
+
+    @Column(name = "book_id")
+    private Integer bookId;
+
+    @Column(name = "author_id")
+    private Integer authorId;
 
     @Column(name = "sort_index",columnDefinition = "INT NOT NULL  DEFAULT 0")
     private int sortIndex;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public Book getBookId() {
+    public Integer getBookId() {
         return bookId;
     }
 
-    public void setBookId(Book bookId) {
+    public void setBookId(Integer bookId) {
         this.bookId = bookId;
     }
 
-    public Author getAuthorId() {
+    public Integer getAuthorId() {
         return authorId;
     }
 
-    public void setAuthorId(Author authorId) {
+    public void setAuthorId(Integer authorId) {
         this.authorId = authorId;
     }
 

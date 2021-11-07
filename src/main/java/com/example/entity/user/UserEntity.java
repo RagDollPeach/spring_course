@@ -1,6 +1,7 @@
 package com.example.entity.user;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -9,13 +10,13 @@ public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(columnDefinition = "VARCHAR(255) NOT NULL")
     private String hash;
 
-    @Column(columnDefinition = "TIMESTAMP NOT NULL")
-    private LocalDateTime regTime;
+    @Column(name = "regtime",columnDefinition = "TIMESTAMP NOT NULL")
+    private LocalDate regTime;
 
     @Column(columnDefinition = "INT NOT NULL")
     private int balance;
@@ -23,11 +24,11 @@ public class UserEntity {
     @Column(columnDefinition = "VARCHAR(255) NOT NULL")
     private String name;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -39,11 +40,11 @@ public class UserEntity {
         this.hash = hash;
     }
 
-    public LocalDateTime getRegTime() {
+    public LocalDate getRegTime() {
         return regTime;
     }
 
-    public void setRegTime(LocalDateTime regTime) {
+    public void setRegTime(LocalDate regTime) {
         this.regTime = regTime;
     }
 

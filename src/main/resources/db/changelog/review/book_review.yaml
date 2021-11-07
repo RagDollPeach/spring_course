@@ -1,0 +1,36 @@
+databaseChangeLog:
+- changeSet:
+    id: 1635855799215-13
+    author: Denchik (generated)
+    changes:
+      - createTable:
+          tableName: book_review
+          columns:
+            - column:
+                autoIncrement: true
+                constraints:
+                  nullable: false
+                  primaryKey: true
+                  primaryKeyName: book_review_pkey
+                name: id
+                type: BIGINT
+            - column:
+                constraints:
+                  nullable: false
+                name: book_id
+                type: INTEGER
+            - column:
+                constraints:
+                  nullable: false
+                name: user_id
+                type: INTEGER
+            - column:
+                constraints:
+                  nullable: false
+                name: time
+                type: TIMESTAMP WITHOUT TIME ZONE
+            - column:
+                constraints:
+                  nullable: false
+                name: text
+                type: TEXT

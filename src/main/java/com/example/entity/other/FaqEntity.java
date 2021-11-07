@@ -8,7 +8,7 @@ public class FaqEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(name = "sort_index",columnDefinition = "INT NOT NULL  DEFAULT 0")
     private int sortIndex;
@@ -19,11 +19,11 @@ public class FaqEntity {
     @Column(columnDefinition = "TEXT NOT NULL")
     private String answer;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

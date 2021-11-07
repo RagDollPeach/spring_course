@@ -1,6 +1,37 @@
 databaseChangeLog:
   - include:
-    file: db/changelog/liquibase-outputChangeLog.yaml
-
-
-
+      file: db/changelog/author/author.yaml
+  - include:
+      file: db/changelog/book/book.yaml
+  - include:
+      file: db/changelog/genres/genres.yaml
+  - include:
+      file: db/changelog/other/book2author.yaml
+  - include:
+      file: db/changelog/other/book2genre.yaml
+  - include:
+      file: db/changelog/other/book2user.yaml
+  - include:
+      file: db/changelog/other/book2user_type.yaml
+  - include:
+      file: db/changelog/other/book_file.yaml
+  - include:
+      file: db/changelog/other/book_file_type.yaml
+  - include:
+      file: db/changelog/other/document.yaml
+  - include:
+      file: db/changelog/other/file_download.yaml
+  - include:
+      file: db/changelog/other/message.yaml
+  - include:
+      file: db/changelog/payment/balance_transaction.yaml
+  - include:
+      file: db/changelog/review/book_review.yaml
+  - include:
+      file: db/changelog/review/book_review_like.yaml
+  - include:
+      file: db/changelog/tag/faq.yaml
+  - include:
+      file: db/changelog/user/users.yaml
+  - include:
+      file: db/changelog/user/user_contact.yaml

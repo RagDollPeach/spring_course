@@ -5,7 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 @Table(name = "book")
@@ -13,8 +16,8 @@ public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-    private LocalDateTime pub_date;
+    private Long id;
+    private LocalDate pub_date;
     private Short is_bestseller;
     private String slug;
     private String title;
@@ -23,19 +26,19 @@ public class Book {
     private String price;
     private Short discount;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public LocalDateTime getPub_date() {
+    public LocalDate getPub_date() {
         return pub_date;
     }
 
-    public void setPub_date(LocalDateTime pub_date) {
+    public void setPub_date(LocalDate pub_date) {
         this.pub_date = pub_date;
     }
 

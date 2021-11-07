@@ -9,7 +9,7 @@ public class Book2UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(columnDefinition = "TIMESTAMP NOT NULL")
     private LocalDateTime time;
@@ -23,11 +23,11 @@ public class Book2UserEntity {
     @Column(name = "user_id",columnDefinition = "INT NOT NULL")
     private int userId;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

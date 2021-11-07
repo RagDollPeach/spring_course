@@ -8,7 +8,7 @@ public class Book2GenreEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(name = "book_id" ,columnDefinition = "INT NOT NULL")
     private int bookId;
@@ -16,11 +16,11 @@ public class Book2GenreEntity {
     @Column(name = "genre_id" ,columnDefinition = "INT NOT NULL")
     private int genreId;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

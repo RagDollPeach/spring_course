@@ -1,0 +1,42 @@
+databaseChangeLog:
+- changeSet:
+    id: 1635855799215-18
+    author: Denchik (generated)
+    changes:
+      - createTable:
+          tableName: user_contact
+          columns:
+            - column:
+                autoIncrement: true
+                constraints:
+                  nullable: false
+                  primaryKey: true
+                  primaryKeyName: user_contact_pkey
+                name: id
+                type: BIGINT
+            - column:
+                constraints:
+                  nullable: false
+                name: user_id
+                type: INTEGER
+            - column:
+                constraints:
+                  nullable: false
+                name: approved
+                type: SMALLINT
+            - column:
+                constraints:
+                  nullable: false
+                name: code
+                type: VARCHAR(255)
+            - column:
+                name: code_trails
+                type: INTEGER
+            - column:
+                name: code_time
+                type: TIMESTAMP WITHOUT TIME ZONE
+            - column:
+                constraints:
+                  nullable: false
+                name: contact
+                type: VARCHAR(255)

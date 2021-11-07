@@ -9,13 +9,13 @@ public class MessageEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(columnDefinition = "TIMESTAMP NOT NULL")
     private LocalDateTime time;
 
     @Column(name = "user_id",columnDefinition = "INT")
-    private int userId;
+    private Integer userId;
 
     @Column(columnDefinition = "VARCHAR(255)")
     private String email;
@@ -29,11 +29,11 @@ public class MessageEntity {
     @Column(columnDefinition = "TEXT NOT NULL")
     private String text;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -45,11 +45,11 @@ public class MessageEntity {
         this.time = time;
     }
 
-    public int getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 

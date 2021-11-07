@@ -1,0 +1,26 @@
+databaseChangeLog:
+- changeSet:
+    id: 1635855799215-12
+    author: Denchik (generated)
+    changes:
+      - createTable:
+          tableName: book_file_type
+          columns:
+            - column:
+                autoIncrement: true
+                constraints:
+                  nullable: false
+                  primaryKey: true
+                  primaryKeyName: book_file_type_pkey
+                name: id
+                type: BIGINT
+            - column:
+                constraints:
+                  nullable: false
+                name: name
+                type: VARCHAR(255)
+            - column:
+                constraints:
+                  nullable: false
+                name: description
+                type: TEXT
