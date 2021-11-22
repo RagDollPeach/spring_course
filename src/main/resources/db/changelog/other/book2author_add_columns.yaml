@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-columns-book-author
+      author: Denchik
+      changes:
+        - addColumn:
+            tableName: book2author
+            columns:
+              - column:
+                  name: book
+                  type: VARCHAR(250)
+              - column:
+                  name: author
+                  type: VARCHAR(250)
+                  constraints:
+                    nullable: false

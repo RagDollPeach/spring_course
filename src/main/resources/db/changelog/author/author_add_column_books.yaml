@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-column-books
+      author: Denchik
+      changes:
+        - addColumn:
+            tableName: author
+            columns:
+              - column:
+                  name: books
+                  type: VARCHAR(250)
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseColumnNames: books
+            baseTableName: book2author
+            referencedColumnNames: id
+            referencedTableName: author
+            constraintName: author_book2author
