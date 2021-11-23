@@ -17,11 +17,15 @@ databaseChangeLog:
             - column:
                 constraints:
                   nullable: false
+                  foreignKeyName: book2author_book_id
+                  references: book (id)
                 name: book_id
                 type: INTEGER
             - column:
                 constraints:
                   nullable: false
+                  foreignKeyName: book2author_author_id
+                  references: author (id)
                 name: author_id
                 type: INTEGER
             - column:
