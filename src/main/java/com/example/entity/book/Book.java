@@ -1,9 +1,15 @@
 package com.example.entity.book;
 
 import com.example.entity.author.Author;
-import org.springframework.web.servlet.tags.form.TextareaTag;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -22,7 +28,6 @@ public class Book {
     private String slug;
     private String title;
     private String image;
-    @Column(columnDefinition = "TEXT")
     private String description;
     private String price;
     private Short discount;
