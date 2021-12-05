@@ -11,3 +11,10 @@ databaseChangeLog:
       changes:
         - sqlFile:
             path: sql/data/book/book.sql
+  - changeSet:
+      id: 3
+      author: Denchik
+      changes:
+        - sqlFile:
+            path:
+              sql/data/other/book2author.sql
