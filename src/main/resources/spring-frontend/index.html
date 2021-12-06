@@ -42,7 +42,7 @@ p.error-browser
                     <h2 class="Section-title">Рекомендуемое
                     </h2>
                 </div>
-                <div class="Slider Slider_carousel" >
+                <div class="Slider Slider_carousel">
                     <div class="Slider-box Cards" data-load="recommended" data-loadoffset="8" data-loadlimit="20" >
                         <div class="Slider-item" th:each="book : ${recommendedBooks}" >
                             <div class="Slider-content">
@@ -54,7 +54,7 @@ p.error-browser
                                         <div class="Card-description" th:each="author : ${book.getAuthors()}" th:text="${author.getName()}"> Кондратенко Валерий Петрович
                                         </div>
                                         <div class="Card-cost"><span class="Card-priceOld" th:text="${book.price}">₽300.00</span>
-                                            <span class="Card-price" th:text="${book.price}">₽190.00</span>
+                                            <span class="Card-price" th:text="${book.discount}">₽190.00</span>
                                         </div>
                                     </div>
                                 </div>
@@ -88,10 +88,10 @@ p.error-browser
                                     <strong class="Card-title"><a href="/books/slug.html" th:text="${book.title}">Техника</a>
                                     </strong>
                                     <div class="Card-description"
-                                         th:each="author : ${book.getAuthors()}" th:text="${author.getName()}">Кондратенко Александр Петрович
+                                         th:each="author : ${book.getAuthors()}" th:text="${author.getName()}" >Кондратенко Александр Петрович
                                     </div>
                                     <div class="Card-cost"><span class="Card-priceOld" th:text="${book.price}">₽500.00</span>
-                                        <span class="Card-price" th:text="${book.price}">₽390.00</span>
+                                        <span class="Card-price" th:text="${book.discount}">₽390.00</span>
                                     </div>
                                 </div>
                             </div>

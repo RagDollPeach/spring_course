@@ -1,7 +1,6 @@
 package com.example.entity.book;
 
 import com.example.entity.author.Author;
-import org.springframework.web.servlet.tags.form.TextareaTag;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
