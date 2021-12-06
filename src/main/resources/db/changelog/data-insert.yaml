@@ -16,4 +16,5 @@ databaseChangeLog:
       author: Denchik
       changes:
         - sqlFile:
-            path: sql/data/other/book2author.sql
+            path:
+              sql/data/other/book2author.sql
