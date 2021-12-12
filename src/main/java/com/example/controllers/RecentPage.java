@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Controller
@@ -21,7 +22,7 @@ public class RecentPage {
 
     @ModelAttribute("booksList")
     public List<Book> bookList(){
-        return bookService.getBooksData();
+        return bookService.getBooksByDate(LocalDate.ofYearDay(2020,1),LocalDate.now());
     }
 
     @GetMapping("/recent")

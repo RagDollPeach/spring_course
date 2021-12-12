@@ -52,4 +52,4 @@ databaseChangeLog:
                     nullable: false
                   defaultValueNumeric: 0
                   name: discount
-                  type: SMALLINT
+                  type: DOUBLE

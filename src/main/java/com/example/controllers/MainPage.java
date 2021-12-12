@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Controller
@@ -24,7 +25,17 @@ public class MainPage {
         return bookService.getBooksData();
     }
 
-    @GetMapping("/")
+    @ModelAttribute("newBooks")
+    public List<Book> newBooks() {
+        return bookService.getBooksByDate(LocalDate.ofYearDay(2020,1),LocalDate.now());
+    }
+
+    @ModelAttribute("bestsellers")
+    public List<Book> bestsellers() {
+        return bookService.getBestsellers();
+    }
+
+        @GetMapping("/")
     public String mainPage() {
         return "index";
     }

@@ -10,4 +10,9 @@ public class DocumentsPage {
     public String documentsPage() {
         return "/documents/index";
     }
+
+    @GetMapping("/documents/slug")
+    public String slugPage() {
+        return "/documents/slug";
+    }
 }
