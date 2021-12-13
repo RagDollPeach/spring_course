@@ -22,7 +22,7 @@ public class RecentPage {
 
     @ModelAttribute("booksList")
     public List<Book> bookList(){
-        return bookService.getBooksByDate(LocalDate.ofYearDay(2020,1),LocalDate.now());
+        return bookService.getBooksData();
     }
 
     @GetMapping("/recent")

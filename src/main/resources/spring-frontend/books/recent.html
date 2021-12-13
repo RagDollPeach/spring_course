@@ -30,6 +30,7 @@
   <script defer src="/assets/js/scripts.min.js?v=09585989"></script>
   <head th:replace="~{fragments/header_fragment :: headPeace}"></head>
 </head>
+<header th:replace="~{fragments/header_fragment :: headFragment}"></header>
 <body class="Site">
   <!--if lt IE 8
   p.error-browser
@@ -40,7 +41,6 @@
           | браузера здесь&nbsp;
       | для правильного отображения сайта.
   -->
-  <header th:replace="~{fragments/header_fragment :: headFragment}"></header>
   <div class="Middle">
     <div class="wrap">
       <main class="Middle-main">
@@ -76,7 +76,7 @@
               <div class="Card-content">
                 <strong class="Card-title"><a href="#" th:text="${book.title}">Техника</a>
                 </strong>
-                <div class="Card-description" th:text="${book.getAuthors()}">Кондратенко Александр Петрович
+                <div class="Card-description" th:text="${book.authors}">Кондратенко Александр Петрович
                 </div>
                 <div class="Card-cost"><span class="Card-priceOld" th:text="${book.discount}">₽300.00</span>
                   <span class="Card-price" th:text="${book.price}">₽190.00</span>
