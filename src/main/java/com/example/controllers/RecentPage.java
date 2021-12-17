@@ -22,11 +22,12 @@ public class RecentPage {
 
     @ModelAttribute("booksList")
     public List<Book> bookList(){
-        return bookService.getBooksData();
+        return bookService.getBooksByDate(LocalDate.now().minusYears(2), LocalDate.now());
     }
 
-    @GetMapping("/recent")
+    @GetMapping("recent")
     public String recentPage() {
         return "/books/recent";
     }
+
 }
